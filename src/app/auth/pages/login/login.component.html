@@ -1,0 +1,31 @@
+
+<form [formGroup]="miFormulario" class="form-container" (ngSubmit)="login()">
+    <div class="input-container" *ngFor="let input of inputs">
+        <input class="input-form" [type]="input" [formControlName]="input">
+        <label [ngClass]="{
+                            'label-form':true,
+                            'label-active':cssLabelActive(input)
+                          }">{{input | titlecase}}</label>
+    </div>
+    <button class="btn btn-primary btn-form" type="submit">
+        Ingresar
+    </button>
+</form>
+<hr>
+<div class="login-social">
+    <!-- <label class="separador"> o </label> -->
+    
+    <button class="btn btn-social btn-google">
+        <i class="fab fa-google"></i>
+        Ingresar con google
+    </button>
+
+    <button class="btn btn-social btn-facebook ">
+        <i class="fab fa-facebook-f"></i>
+        Ingresar con facebook
+    </button>
+
+</div>
+<div class="ingresar">
+    <label>¿No tienes una cuenta? <a routerLink="/register">Crear Cuenta</a></label>
+</div>

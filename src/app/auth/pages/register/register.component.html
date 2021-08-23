@@ -1,0 +1,13 @@
+<form [formGroup]="miFormulario" (ngSubmit)="agregarUsuario()" class="form-container">
+    <div class="input-container {{input}}-container" *ngFor="let input of inputs">
+        <input class="input-form" type="text" [formControlName]="input" >
+        <label [ngClass]="{ 'label-form':true,
+                            'label-active':cssLabelActive(input)
+                          }" for="">{{input|titlecase}}</label>
+    </div>
+
+    <button type="submit" class="btn btn-primary btn-form">Registrarse</button>
+</form>
+<div class="ingresar">
+    <label>¿Ya tienes una cuenta? <a routerLink="/login">Ingresa aquí</a></label>
+</div>

@@ -1,0 +1,45 @@
+.form-container{
+    display: grid;
+    gap: 1.2rem;
+    .btn-form{
+        width: 50%;
+        justify-self: center;
+    }
+}
+hr{
+    margin: 1.2rem 0;
+
+}
+.login-social{
+    display: grid;
+    grid-template-columns: repeat(2,1fr);
+    grid-template-areas: " google facebook "
+    ;
+    gap: 1.2rem;
+    .separador{
+        grid-area: separador;
+        text-align: center;
+        font-size: 1.5rem;
+        font-weight: 500;
+    }
+    .btn-google{
+        border: 2px solid var(--google-color);
+        color: var(--google-color);
+        grid-area: google;
+
+        &:hover{
+            background-color: var(--google-color);
+            color: #fff;
+        }
+    }
+    .btn-facebook{
+        border: 2px solid var(--facebook-color);
+        color: var(--facebook-color);
+        grid-area: facebook;
+
+        &:hover{
+            background-color: var(--facebook-color);
+            color: #fff;
+        }
+    }
+}

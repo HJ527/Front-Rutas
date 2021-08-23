@@ -1,0 +1,44 @@
+.form-container{
+    display: grid;
+    grid-template-columns: repeat(4,1fr);
+    gap:1.2rem;
+    grid-template-areas:"nombre nombre nombre nombre"
+                        "primerAp primerAp segundoAp segundoAp"
+                        "usuario usuario telefono telefono"
+                        "password password password2 password2"
+                        "correo correo correo correo"
+                        "nada boton boton nada2"
+    ;
+    
+    .nombre-container{
+        grid-area: nombre;
+    }
+    .primerApellido-container{
+        grid-area: primerAp;
+    }
+    .segundoApellido-container{
+        grid-area: segundoAp;
+    }
+    .usuario-container{
+        grid-area: usuario;
+    }
+    .telefono-container{
+        grid-area: telefono;
+    }
+    .password-container{
+        grid-area: password;
+    }
+    .password2-container{
+        grid-area: password2;
+    }
+    .correo-container{
+        grid-area: correo;
+    }
+
+    .btn-form{
+        width: 100%;
+        justify-self: center;
+        grid-area: boton;
+    }
+    
+}
