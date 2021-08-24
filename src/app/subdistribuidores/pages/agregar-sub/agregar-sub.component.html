@@ -1,0 +1,24 @@
+
+<div class="header">
+    <h2 class="titulos-header">Agregar Sub</h2>
+</div>
+<hr>
+<form [formGroup]="miFormulario" class="form-container">
+    <div class="inputs-container">
+        <h3 class="subtitulos-header">Ingrese la siguiente información</h3>
+        <div class="input-container" class="{{input}}-container" *ngFor="let input of uiService.crearInputs(miFormulario)"> 
+            <input type="text"  [ngClass]="{'input-form':true
+                                           }" 
+                                [formControlName]="input">
+            <label [ngClass]="{ 'label-form':true,
+                                'label-active':uiService.labelActive(this.miFormulario,input)
+                              }">
+                              {{input|titlecase}}
+            </label>
+        </div>
+    </div>
+
+    <div class="map-container">
+
+    </div>
+</form>

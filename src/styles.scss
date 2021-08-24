@@ -15,6 +15,12 @@
     font-family: 'Roboto',sans-serif;
 }
 
+.container{
+    max-width: 90%;
+    width: 1400px;
+    margin:auto
+}
+
 .titulos-header{
     color: var(--primary-color);
     font-size: 2rem;
@@ -31,10 +37,10 @@
     border-radius: 5px;
     display: grid;
     position: relative;
-
     .label-form{
         background-color: #fff;
         color: var(--second-text-color);
+        font-size: .8rem;
         font-weight: 500;
         line-height: 1rem;
         margin-left: 10px;

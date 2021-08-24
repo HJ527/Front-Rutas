@@ -25,7 +25,7 @@ export class RegisterComponent implements OnInit {
   inputs:string[]=[];
   constructor(private fb:FormBuilder,
               private authService:AuthService,
-              private uiService:UiService          
+              public uiService:UiService          
     ) { }
 
   ngOnInit(): void {

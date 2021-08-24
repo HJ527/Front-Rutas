@@ -1,0 +1,58 @@
+.form-container{
+    width: 100%;
+    .inputs-container{
+        box-shadow: 0 0 2px 2px var(--primary-color);
+        display: grid;
+        gap:1rem;
+        grid-template-columns: repeat(4,1fr);
+        grid-template-areas:    "header header header header"
+                                "nombre nombre correo correo"
+                                "telefono calle calle numero"
+                                "numInt cp colonia colonia"
+                                "municipio municipio estado estado"
+                                "lat lat lng lng" 
+
+        ;
+        padding: 1rem;
+        width: 50%;
+        .subtitulos-header{
+            grid-area: header;
+        }
+        .nombre-container{
+            grid-area: nombre;
+        }
+        .correo-container{
+            grid-area: correo;
+        }
+        .telefono-container{
+            grid-area: telefono;
+        }
+        .calle-container{
+            grid-area: calle;
+        }
+        .numero-container{
+            grid-area: numero;
+        }
+        .numeroInt-container{
+            grid-area: numInt;
+        }
+        .cp-container{
+            grid-area: cp;
+        }
+        .colonia-container{
+            grid-area: colonia;
+        }
+        .municipio-container{
+            grid-area: municipio;
+        }
+        .estado-container{
+            grid-area: estado;
+        }
+        .lat-container{
+            grid-area: lat;
+        }
+        .lng-container{
+            grid-area: lng;
+        }
+    }
+}
