@@ -4,7 +4,8 @@
 
 export const environment = {
   production: false,
-  urlBack:'http://localhost:8080'
+  urlBack:'http://localhost:8080',
+  mapsKey:'AIzaSyDT0zVuMyIyjhB-mfpikZZoLv7sGitmjhA'
 };
 
 /*

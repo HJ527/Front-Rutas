@@ -5,6 +5,7 @@ import { HomeComponent } from './pages/home/home.component';
 import { RouterModule } from '@angular/router';
 import { SubdistribuidoresRoutingModule } from './subdistribuidores-routing.module';
 import { ReactiveFormsModule } from '@angular/forms';
+import { SharedModule } from '../shared/shared.module';
 
 
 
@@ -17,6 +18,7 @@ import { ReactiveFormsModule } from '@angular/forms';
     RouterModule,
     CommonModule,
     ReactiveFormsModule,
+    SharedModule,
     SubdistribuidoresRoutingModule,
   ]
 })

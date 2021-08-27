@@ -1,13 +1,14 @@
-import { Component, OnInit } from '@angular/core';
+import { AfterViewInit, Component, ElementRef, OnInit, ViewChild } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { UiService } from '../../../shared/services/ui.service';
+import { MapasService } from '../../../shared/services/maps/mapas.service';
 
 @Component({
   selector: 'app-agregar-sub',
   templateUrl: './agregar-sub.component.html',
   styleUrls: ['./agregar-sub.component.scss']
 })
-export class AgregarSubComponent implements OnInit {
+export class AgregarSubComponent implements OnInit, AfterViewInit {
 
   miFormulario:FormGroup=this.fb.group({
     nombre:[null,[Validators.required]],
@@ -24,14 +25,33 @@ export class AgregarSubComponent implements OnInit {
     lng:[null,[Validators.required]],
   })
 
+  @ViewChild('mapa') divMapa!:ElementRef;
+  mapa!:google.maps.Map
+  contactoInputs!:string[];
+  direccionInputs!:string[];
+
+
   constructor(private fb:FormBuilder,
-              public uiService:UiService
+              public uiService:UiService,
+              private mapService:MapasService
     ) { }
 
-  ngOnInit(): void {
-
+    
+  ngAfterViewInit(): void {
+    this.mapService.loader.load().then(async() => {
+        this.mapa= await new google.maps.Map(this.divMapa.nativeElement, {
+        center: { lat: -34.397, lng: 150.644 },
+        zoom: 8,
+      });
+    });
   }
 
+  ngOnInit(): void {
+    this.contactoInputs = this.uiService.crearInputs(this.miFormulario).slice(0,3);
+    this.direccionInputs = this.uiService.crearInputs(this.miFormulario).slice(3);
+
+  }
+  
 
 
 }

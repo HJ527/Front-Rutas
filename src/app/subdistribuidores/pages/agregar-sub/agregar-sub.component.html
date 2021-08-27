@@ -4,21 +4,46 @@
 </div>
 <hr>
 <form [formGroup]="miFormulario" class="form-container">
-    <div class="inputs-container">
-        <h3 class="subtitulos-header">Ingrese la siguiente información</h3>
-        <div class="input-container" class="{{input}}-container" *ngFor="let input of uiService.crearInputs(miFormulario)"> 
+    <div class="contacto-container inputs-container">
+        <h3 class="subtitulos-header">Información de contacto</h3>
+        <div class="input-container" class="{{input}}-container" *ngFor="let input of contactoInputs"> 
             <input type="text"  [ngClass]="{'input-form':true
-                                           }" 
+                                            }" 
                                 [formControlName]="input">
             <label [ngClass]="{ 'label-form':true,
                                 'label-active':uiService.labelActive(this.miFormulario,input)
-                              }">
-                              {{input|titlecase}}
+                                }">
+                                {{input|titlecase}}
             </label>
         </div>
     </div>
 
-    <div class="map-container">
-
+    <div  class="map-container">
+        <div class="map-header">
+            <h3 class="subtitulos-header">
+                Geolocalización
+            </h3>
+        </div>
+        <div #mapa class="map">
+        </div>
     </div>
+
+    <div class="direccion-container inputs-container">
+        <h3 class="subtitulos-header">Dirección</h3>
+        <div class="input-container" class="{{input}}-container" *ngFor="let input of direccionInputs"> 
+            <input type="text"  [ngClass]="{'input-form':true
+                                            }" 
+                                [formControlName]="input">
+            <label [ngClass]="{ 'label-form':true,
+                                'label-active':uiService.labelActive(this.miFormulario,input)
+                                }">
+                                {{input|titlecase}}
+            </label>
+        </div>
+        <button class="btn btn-primary">
+            Agregar Subdistribuidor
+        </button>
+    </div>
+
+    
 </form>

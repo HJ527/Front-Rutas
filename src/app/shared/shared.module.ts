@@ -10,6 +10,9 @@ import { PerfilComponent } from './pages/perfil/perfil.component';
     NavbarComponent,
     PerfilComponent
   ],
+  exports:[
+    NavbarComponent
+  ],
   imports: [
     CommonModule
   ]

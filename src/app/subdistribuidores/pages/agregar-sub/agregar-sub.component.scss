@@ -1,20 +1,30 @@
+// .header{
+    
+// }
+
+hr{
+    margin: 2rem 0;
+    border-color: var(--primary-color);
+}
+
 .form-container{
+    height: fit-content;
+    display: grid;
+    gap: 1rem;
+    grid-template-columns: 1fr 60%;
+    grid-template-areas: "contacto contacto"
+
+    ;
     width: 100%;
     .inputs-container{
-        box-shadow: 0 0 2px 2px var(--primary-color);
+        background-color: #fff;
+        box-shadow: var(--box-shadow);
         display: grid;
         gap:1rem;
         grid-template-columns: repeat(4,1fr);
-        grid-template-areas:    "header header header header"
-                                "nombre nombre correo correo"
-                                "telefono calle calle numero"
-                                "numInt cp colonia colonia"
-                                "municipio municipio estado estado"
-                                "lat lat lng lng" 
-
-        ;
+        grid-template-rows: 30px;
+        grid-auto-rows: var(--size-inputs);
         padding: 1rem;
-        width: 50%;
         .subtitulos-header{
             grid-area: header;
         }
@@ -53,6 +63,39 @@
         }
         .lng-container{
             grid-area: lng;
+        }
+    }
+    .contacto-container{
+        grid-area: contacto;
+        grid-template-areas:    "header header header header"
+                                "nombre correo correo telefono"
+    }
+    .direccion-container{
+        grid-template-columns: repeat(6,1fr);
+        grid-template-areas:    "header header header header header header"
+                                "calle calle numero numero numInt numInt"
+                                "cp cp colonia colonia colonia colonia"
+                                "municipio municipio municipio estado estado estado"
+                                "lat lat lat lng lng lng"
+                                "btn btn btn btn btn btn"
+
+        ;
+
+        .btn-primary{
+            grid-area: btn;
+            padding: 0;
+        }
+    }
+
+    .map-container{
+        background-color: #fff;
+        box-shadow: var(--box-shadow);
+        display: grid;
+        gap: 1rem;
+        grid-template-rows:30px;
+        padding: 1rem;
+        .map{
+            height: 100%;
         }
     }
 }

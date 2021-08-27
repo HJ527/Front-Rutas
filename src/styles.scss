@@ -1,4 +1,6 @@
 /* You can add global styles to this file, and also import other style files */
+$size-inputs:3rem;
+
 :root{
     --primary-color:#03045e;
     --subtitulos-color:#adb5bd;
@@ -6,6 +8,8 @@
     --focus-color:#0077b6;
     --google-color:#ea4335;
     --facebook-color:#1877f2;
+    --size-inputs:3rem;
+    --box-shadow: 0 0 5px #6c757d
 }
 
 *{
@@ -14,11 +18,15 @@
     box-sizing: border-box;
     font-family: 'Roboto',sans-serif;
 }
+body{
+    background-color: rgba($color: #caf0f8, $alpha: .2);
+}
 
 .container{
     max-width: 90%;
     width: 1400px;
-    margin:auto
+    margin:auto;
+    margin-top: 3rem;
 }
 
 .titulos-header{
@@ -53,13 +61,13 @@
     }
     .label-active{
         color: var(--focus-color);
-        transform: translate(0,-1.25rem);
+        transform: translate(0,-$size-inputs * .5 );
         z-index: 11;
     }
     .input-form:focus + .label-form{
         // background-color: #fff;
         color: var(--focus-color);
-        transform: translate(0,-1.25rem);
+        transform: translate(0,-$size-inputs * .5 );
         z-index: 11;
     }
     .input-form{
