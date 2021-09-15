@@ -6,6 +6,7 @@ import { SubdistribuidoresModule } from '../subdistribuidores/subdistribuidores.
 import { VendedoresRoutingModule } from './vendedores-routing.module';
 import { SharedModule } from '../shared/shared.module';
 import { DashboardComponent } from './pages/dashboard/dashboard.component';
+import { ReactiveFormsModule } from '@angular/forms';
 
 
 
@@ -17,6 +18,7 @@ import { DashboardComponent } from './pages/dashboard/dashboard.component';
   ],
   imports: [
     CommonModule,
+    ReactiveFormsModule,
     VendedoresRoutingModule,
     SharedModule,
     SubdistribuidoresModule,

@@ -5,6 +5,7 @@ import { PerfilComponent } from './pages/perfil/perfil.component';
 import { TipoInputPipe } from './pipes/tipo-input.pipe';
 import { SubNavbarComponent } from './components/sub-navbar/sub-navbar.component';
 import { RouterModule } from '@angular/router';
+import { MinicardComponent } from './components/minicard/minicard.component';
 
 
 
@@ -14,9 +15,11 @@ import { RouterModule } from '@angular/router';
     PerfilComponent,
     TipoInputPipe,
     SubNavbarComponent,
+    MinicardComponent,
   ],
   exports:[
-    NavbarComponent
+    MinicardComponent,
+    NavbarComponent,
   ],
   imports: [
     CommonModule,

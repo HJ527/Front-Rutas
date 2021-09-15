@@ -1,1 +1,65 @@
+<div class="header">
+    <h2 class="titulos-header">Crear Ruta</h2>
+</div>
+<hr>
+<form [formGroup]="miFormulario" class="crear-ruta-container">
+    <div class="selects-container">
+        <div class="input-container">
+            <select [ngClass]=" {
+                                'input-form':true
+                                }"
+                    formControlName="estado"
 
+            >
+
+            <option [value]="opt" *ngFor="let opt of estados">{{opt}}</option>
+            </select>
+            <label  [ngClass]="{
+                    'label-form':true,
+                    'label-active':uiService.labelActive(miFormulario,'estado')
+            }">
+                Estado
+            </label>
+        </div>
+
+        <div class="input-container">
+            <select [ngClass]=" {
+                                'input-form':true
+                                }"
+                    formControlName="municipio"
+
+            >
+            <option [value]="opt" *ngFor="let opt of municipios">{{opt}}</option>
+            </select>
+            <label  [ngClass]="{
+                    'label-form':true,
+                    'label-active':uiService.labelActive(miFormulario,'municipio')
+            }">
+                Municipio
+            </label>
+        </div>
+    </div>
+
+    <div class="subs-container">
+        <app-minicard (subdistribuidor)="agregarSubLista($event)" [sub]="sub" *ngFor="let sub of subs"></app-minicard>
+    </div>
+
+    <div class="ruta-container ">
+        <div class="list-container section-container">
+            <h3 class="subtitulos-header">Subdistribuidores</h3>
+
+            <ul>
+                <li *ngFor="let item of listaRuta" >{{item.nombre}} <span>({{item.direccion.municipio}})</span> </li>
+            </ul>
+        </div>
+
+        <div class="mapa-container section-container">
+            <h3 class="subtitulos-header">Ruta</h3>
+
+            <div #mapa class="mapa">
+
+            </div>
+        </div>
+    </div>
+    
+</form>

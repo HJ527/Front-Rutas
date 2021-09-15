@@ -1,0 +1,12 @@
+<div draggable="true" #minicard class="minicard-container">
+    <div class="img-container">
+        <img draggable="false" src="https://images.unsplash.com/photo-1527368746281-798b65e1ac6e?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=968&q=80" alt="">
+    </div>
+    <div class="body-container">
+        <h3 class="nombre">{{sub.nombre}}</h3>
+        <h5 class="municipio">{{sub.direccion.municipio}}</h5>
+    </div>
+    <div class="agregar-a-ruta" (click)="agregarSub()">
+        <i class="fas fa-plus"></i>
+    </div>
+</div>

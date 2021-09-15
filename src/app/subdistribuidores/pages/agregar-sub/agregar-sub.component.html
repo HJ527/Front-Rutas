@@ -4,7 +4,8 @@
 </div>
 <hr>
 <form [formGroup]="miFormulario" class="form-container" autocomplete="off" (ngSubmit)="agregarSub()">
-    <div class="contacto-container inputs-container">
+    
+    <div class="contacto-container inputs-container section-container">
         <h3 class="subtitulos-header">Información de contacto</h3>
         <div class="input-container" class="{{input}}-container" *ngFor="let input of contactoInputs"> 
             <input type="text"  [ngClass]="{'input-form':true
@@ -20,7 +21,7 @@
         </div>
     </div>
 
-    <div  class="map-container">
+    <div  class="map-container section-container">
         <div class="map-header">
             <h3 class="subtitulos-header">
                 Geolocalización
@@ -30,7 +31,7 @@
         </div>
     </div>
 
-    <div class="direccion-container inputs-container">
+    <div class="direccion-container inputs-container section-container">
         <h3 class="subtitulos-header">Dirección</h3>
         <div class="input-container" class="{{input}}-container" *ngFor="let input of direccionInputs"> 
             <input  type="text" 

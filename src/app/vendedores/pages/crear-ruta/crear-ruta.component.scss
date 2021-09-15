@@ -1,0 +1,45 @@
+.crear-ruta-container{
+    display: grid;
+    gap: 1rem;
+    .selects-container{
+        display: grid;
+        gap: 1rem;
+        grid-template-columns: repeat(2,1fr);
+    }
+    .subs-container{
+        display: grid;
+        gap: 1rem;
+        grid-auto-flow: column;
+        justify-content: start;
+    }
+
+    .ruta-container{
+        display: grid;
+        gap: 1rem;
+        grid-template-columns:  1fr 1fr;
+        .list-container{
+            h3{
+                margin-bottom: 1rem;
+            }
+            ul{
+                list-style: none;
+                li{
+
+                    font-size: 1.5rem;
+                    font-weight: 500;
+                    span{
+                        font-size: 1rem;
+                        font-weight: 400;
+                    }
+                }
+            }
+        }
+        .mapa-container{
+            .mapa{
+                margin-top: 1rem;
+                width: 100%;
+                height: 500px;
+            }
+        }
+    }
+}
