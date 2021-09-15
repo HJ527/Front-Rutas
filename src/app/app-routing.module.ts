@@ -7,8 +7,8 @@ const routes: Routes = [
     loadChildren:()=> import('./auth/auth.module').then(m=>m.AuthModule)
   },
   {
-    path:'subdistribuidores',
-    loadChildren:()=> import('./subdistribuidores/subdistribuidores.module').then(m=>m.SubdistribuidoresModule)
+    path:'vendedor',
+    loadChildren:()=> import('./vendedores/vendedores.module').then(m=>m.VendedoresModule)
   }
 ];
 

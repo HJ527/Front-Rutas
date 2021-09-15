@@ -1,0 +1,10 @@
+<div class="subnav-container">
+    <button type="button" 
+            class=" btn option-container"
+            (click)="navegacion(i)" 
+            *ngFor="let option of uiService.optionsSubnav;let i=index">
+            <i></i>
+            <!-- routerLink='/{{uiService.}}/agregar-subdistribuidor' -->
+            <p class="option-text">{{option}}</p>
+    </button>
+</div>

@@ -2,11 +2,6 @@
     
 // }
 
-hr{
-    margin: 2rem 0;
-    border-color: var(--primary-color);
-}
-
 .form-container{
     height: fit-content;
     display: grid;
@@ -20,7 +15,7 @@ hr{
         background-color: #fff;
         box-shadow: var(--box-shadow);
         display: grid;
-        gap:1rem;
+        gap:1.2rem;
         grid-template-columns: repeat(4,1fr);
         grid-template-rows: 30px;
         grid-auto-rows: var(--size-inputs);
@@ -64,6 +59,16 @@ hr{
         .lng-container{
             grid-area: lng;
         }
+        .encargado-container{
+            grid-area: encargado;
+        }
+        .btn-agregar-encargado{
+            grid-area: select;
+            padding: 0;
+        }
+        .direcciones-container{
+            grid-area: direcciones;
+        }
     }
     .contacto-container{
         grid-area: contacto;
@@ -72,16 +77,19 @@ hr{
     }
     .direccion-container{
         grid-template-columns: repeat(6,1fr);
+
         grid-template-areas:    "header header header header header header"
-                                "calle calle numero numero numInt numInt"
-                                "cp cp colonia colonia colonia colonia"
-                                "municipio municipio municipio estado estado estado"
                                 "lat lat lat lng lng lng"
+                                "direcciones direcciones direcciones direcciones direcciones direcciones"
+                                "calle calle calle calle numero numero "
+                                " numInt numInt cp cp  colonia colonia"
+                                "municipio municipio municipio estado estado estado"
+                                "encargado encargado encargado select select select" 
                                 "btn btn btn btn btn btn"
 
         ;
 
-        .btn-primary{
+        .btn-agregarsub{
             grid-area: btn;
             padding: 0;
         }

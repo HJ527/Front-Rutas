@@ -1,0 +1,21 @@
+.subnav-container{
+    display:grid;
+    gap: 1.2rem;
+    grid-auto-flow: column;
+    justify-content: center;
+    .option-container{
+        border-radius: 20px;
+        box-shadow: var(--box-shadow);
+        cursor: pointer; 
+        font-weight: 500;
+        font-size: 1rem;
+        padding: .5rem 1rem;
+        transition: all ease .3s;
+        width: fit-content;
+        &:hover{
+            background-color: var(--focus-color);
+            color: white;
+            transform: scale(1.1);
+        }
+    }
+}

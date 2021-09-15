@@ -20,6 +20,9 @@ import { SharedModule } from '../shared/shared.module';
     ReactiveFormsModule,
     SharedModule,
     SubdistribuidoresRoutingModule,
+  ],
+  exports:[
+    AgregarSubComponent
   ]
 })
 export class SubdistribuidoresModule { }

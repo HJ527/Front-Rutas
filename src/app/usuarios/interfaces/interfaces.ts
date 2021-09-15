@@ -2,8 +2,8 @@
 export interface Usuario {
     segundoApellido?: string;
     telefono:        string;
-    rol:             string;
-    google:          boolean;
+    rol?:            string;
+    google?:          boolean;
     estado:          boolean;
     nombre:          string;
     primerApellido:  string;

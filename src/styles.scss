@@ -3,6 +3,8 @@ $size-inputs:3rem;
 
 :root{
     --primary-color:#03045e;
+    --secondary-color:#cb1b16;
+    --secondary-focus:#ef3c2d;
     --subtitulos-color:#adb5bd;
     --second-text-color:#6c757d;
     --focus-color:#0077b6;
@@ -26,7 +28,7 @@ body{
     max-width: 90%;
     width: 1400px;
     margin:auto;
-    margin-top: 3rem;
+    margin-top: 2rem;
 }
 
 .titulos-header{
@@ -40,24 +42,48 @@ body{
     font-weight: 400;
 }
 
+hr{
+    margin: 2rem 0;
+    border-color: var(--primary-color);
+}
 
 .input-container{
     border-radius: 5px;
     display: grid;
     position: relative;
+    .fa-pen-container{
+        align-items: center;
+        border-left: 1px solid var(--subtitulos-color);
+        color: var(--subtitulos-color);
+        cursor: pointer;
+        display: flex;
+        height: 100%;
+        justify-content: center;
+        padding: 0 5px;
+        position: absolute;
+        right: 0px;
+        width: fit-content;
+        z-index: 11;
+        &:hover{
+            color: white;
+            background-color: var(--focus-color);
+        }
+    }
     .label-form{
         background-color: #fff;
         color: var(--second-text-color);
-        font-size: .8rem;
+        display: flex;
+        justify-content: space-between;
+        font-size: 1rem;
         font-weight: 500;
         line-height: 1rem;
-        margin-left: 10px;
+        margin: 0 10px;
+        padding: 0 5px;
         position: absolute;
         top: calc(50% - .5rem);
         transition: all ease .3s;
         user-select: none;
         z-index: 1;
-        padding: 0 5px;
     }
     .label-active{
         color: var(--focus-color);
@@ -100,6 +126,14 @@ body{
     color: #fff;
     &:hover{
         background-color: var(--focus-color);
+    }
+}
+
+.btn-secondary{
+    background-color: var(--secondary-color);
+    color: #fff;
+    &:hover{
+        background-color: var(--secondary-focus);
     }
 }
 

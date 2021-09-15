@@ -4,8 +4,9 @@
 
 export const environment = {
   production: false,
-  urlBack:'http://localhost:8080',
-  mapsKey:'AIzaSyDT0zVuMyIyjhB-mfpikZZoLv7sGitmjhA'
+  urlBack:'http://localhost:4500',
+  mapsKey:'AIzaSyDT0zVuMyIyjhB-mfpikZZoLv7sGitmjhA',
+  cpUrl:'https://apisgratis.com/api/codigospostales/v2/colonias/cp/?valor='
 };
 
 /*

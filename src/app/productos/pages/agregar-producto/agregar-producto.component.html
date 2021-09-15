@@ -1,0 +1,48 @@
+<div class="header">
+    <h2 class="titulos-header">Agregar producto</h2>
+</div>
+<hr>
+<form class="agregar-producto-container" [formGroup]="miFormulario">
+    
+    <div class="img-container">
+        <img src="https://res.cloudinary.com/dzejy2idn/image/upload/v1631384533/no-image_zrkcyl.jpg" alt="">
+        <input type="file" class="btn btn-agregar">
+    </div>
+
+    <div class="inputs-container">
+       <div class="input-container {{input}}-container" *ngFor="let input of uiService.crearInputs(miFormulario)">
+           <input   type="text"
+                    [formControlName]="input"
+                    [ngClass]="{
+                        'input-form':true
+                    }"
+                    *ngIf="input!=='categoria'"
+                    
+           >
+           <select  [formControlName]="input"
+                    [ngClass]="{
+                        'input-form':true
+                    }"
+                    *ngIf="input==='categoria'"
+            >
+                    <option value="1">categoria1</option>
+                    <option value="2">categoria2</option>
+           </select>
+           <label   for=""
+                    [ngClass]="{
+                        'label-form': true,
+                        'label-active':uiService.labelActive(miFormulario,input)
+                    }"
+            >
+            {{input}}
+            </label>
+            <datalist *ngIf="input==='categoria'" id="{{input}}">
+                <option value="Celular">Celular</option>
+                <option value="Accesorio">Accesorio</option>
+            </datalist>
+        </div> 
+        <button type="submit" class="btn btn-primary">Agregar</button>
+    </div>
+
+    
+</form>

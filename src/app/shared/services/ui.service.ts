@@ -7,6 +7,7 @@ import { FormGroup } from '@angular/forms';
 export class UiService {
 
   inputs:string[]=[]
+  optionsSubnav:string[]=[];
 
   constructor() { }
 

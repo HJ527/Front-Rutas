@@ -1,0 +1,82 @@
+.agregar-producto-container{
+    display: grid;
+    gap: 1rem;
+    grid-template-columns: 40% 1fr;
+    .img-container{
+        background-color: #fff;
+        box-shadow: var(--box-shadow);
+        overflow: hidden;
+        padding: 1rem;
+        position: relative;
+        text-align: center;
+        transition: all ease .3s;
+        img{
+            width: 100%;
+            height: 100%;
+            // z-index: 2;
+        }
+        .btn-agregar{
+            background-color:rgba($color: #000000, $alpha: .5);
+            border-radius: 5px;
+            color: #fff;
+            bottom: 1.5rem;
+            position: absolute;
+            right: 1.5rem;
+            transition: all ease .3s;
+            opacity: 0;
+            &:hover{
+            background-color:#000;
+
+            }
+        }
+        &:hover .btn-agregar{
+            opacity: 1;
+        }
+    }
+    .inputs-container{
+        background-color: #fff;
+        box-shadow: var(--box-shadow);
+        display: grid;
+        gap: 1rem;
+        grid-template-areas:    "clave clave"
+                                "tipo marca"
+                                "modelo color"    
+                                "descripcion descripcion"    
+                                "costo medioMayoreo"
+                                "mayoreo publico"    
+                                "btn btn"    
+        ;
+        grid-template-columns: repeat(2,1fr);
+        padding: 1rem;
+        .clave-container{
+            grid-area: clave;
+        }
+        .tipo-container{
+            grid-area: tipo;
+        }
+        .marca-container{
+            grid-area: marca;
+        }
+        .modelo-container{
+            grid-area: modelo;
+        }
+        .descripcion-container{
+            grid-area: descripcion;
+        }
+        .costo-container{
+            grid-area: costo;
+        }
+        .medioMayoreo-container{
+            grid-area: medioMayoreo;
+        }
+        .mayoreo-container{
+            grid-area: mayoreo;
+        }
+        .publico-container{
+            grid-area: publico;
+        }
+        .btn{
+            grid-area: btn;
+        }
+    }
+}

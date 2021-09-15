@@ -10,7 +10,6 @@ import { IndexComponent } from './home/pages/index/index.component';
   declarations: [
     AppComponent,
     IndexComponent,
-
   ],
   imports: [
     BrowserModule,
