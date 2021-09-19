@@ -7,6 +7,10 @@
         <h5 class="municipio">{{sub.direccion.municipio}}</h5>
     </div>
     <div class="agregar-a-ruta" (click)="agregarSub()">
-        <i class="fas fa-plus"></i>
+        <i [ngClass]="{
+                        'fas':true, 
+                        'fa-plus':(icon==='fa-plus')?true:false,
+                        'fa-minus':(icon==='fa-minus')?true:false
+        }"></i>
     </div>
 </div>

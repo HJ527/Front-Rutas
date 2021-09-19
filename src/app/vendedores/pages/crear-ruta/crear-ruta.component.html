@@ -41,16 +41,17 @@
     </div>
 
     <div class="subs-container">
-        <app-minicard (subdistribuidor)="agregarSubLista($event)" [sub]="sub" *ngFor="let sub of subs"></app-minicard>
+        <app-minicard [icon]="'fa-plus'" (subdistribuidor)="agregarSubLista($event)" [sub]="sub" *ngFor="let sub of subs;let i=index"></app-minicard>
     </div>
 
     <div class="ruta-container ">
         <div class="list-container section-container">
             <h3 class="subtitulos-header">Subdistribuidores</h3>
 
-            <ul>
-                <li *ngFor="let item of listaRuta" >{{item.nombre}} <span>({{item.direccion.municipio}})</span> </li>
-            </ul>
+            <div class="ruta-list-container">
+                <app-minicard  (subdistribuidor)="quitarSubLista($event)" [icon]="'fa-minus'" [sub]="item" *ngFor="let item of listaRuta" ></app-minicard >
+            </div >
+            <button class="btn btn-primary">Calcular Ruta</button>
         </div>
 
         <div class="mapa-container section-container">

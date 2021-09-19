@@ -11,6 +11,7 @@ export class MinicardComponent implements OnInit {
 
   @ViewChild('minicard') minicard !:ElementRef;
   @Input() sub!:Subdistribuidor;
+  @Input() icon!:string;
   @Output() subdistribuidor:EventEmitter<Subdistribuidor>= new EventEmitter()
 
   constructor(private subService:SubService) { }
@@ -21,9 +22,6 @@ export class MinicardComponent implements OnInit {
 
   agregarSub(){
     this.subdistribuidor.emit(this.sub)
-    console.log(this.sub);
-    
   }
-
 
 }

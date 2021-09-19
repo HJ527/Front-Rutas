@@ -27,6 +27,7 @@ export class CrearRutaComponent implements OnInit,AfterViewInit {
   estados:string[]=[];
   municipios:string[]=[];
   subs:Subdistribuidor[]=[];
+  resto:Subdistribuidor[]=[];
   listaRuta:Subdistribuidor[]=[];
   sub!:Subdistribuidor;
 
@@ -51,8 +52,26 @@ export class CrearRutaComponent implements OnInit,AfterViewInit {
     )
 
     this.miFormulario.get('municipio')?.valueChanges.pipe(
-      switchMap(municipio=>this.subService.obtenerSubs(municipio))
-    ).subscribe(resp => this.subs=resp.results)
+      switchMap(municipio=>this.subService.obtenerSubs(municipio)),
+      tap(async(res)=>{
+        this.subs=[]
+        this.resto=[]
+
+        console.log(res)
+        await res.results.forEach(s=>{
+          console.log(this.listaRuta);
+          if(!this.listaRuta.includes(s)){
+            this.resto.push(s)
+            console.log(this.resto);
+            
+          }
+          this.subs=this.resto
+        });
+      })
+    ).subscribe(resp => {
+      resp.results
+     
+    })
   }
 
 
@@ -63,7 +82,6 @@ export class CrearRutaComponent implements OnInit,AfterViewInit {
         zoom:15
       });
       this.center=this.mapService.ubicacionActual;
-      console.log(this.center);
       
       this.mapa.setCenter(this.center)
     })
@@ -77,8 +95,29 @@ export class CrearRutaComponent implements OnInit,AfterViewInit {
 
   agregarSubLista(sub:Subdistribuidor){
     if (!this.listaRuta.includes(sub)) {
-      this.listaRuta.push(sub)
+      
+      this.listaRuta.push(sub);
+      
+      this.subs.map((s,i) => {
+        if (s===sub) {
+          this.subs.splice(i,1)
+        }
+      });
     }
+  }
+
+  quitarSubLista(sub:Subdistribuidor){
+
+    if (!this.subs.includes(sub)) {
+      this.subs.push(sub);
+
+      this.listaRuta.map((s,i) => {
+        if (s===sub) {
+          this.listaRuta.splice(i,1)
+        }
+      });
+    }
+
   }
 
 }
